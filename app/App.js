@@ -1,12 +1,12 @@
 import { router } from './router-config.js';
 import { HomeController } from './controllers/HomeController.js';
-import { CarsController } from './controllers/CarsController.js';
+import { HouseController } from './controllers/HousesController.js';
 const USE_ROUTER = false
 
 class App {
 
   HomeController = new HomeController()
-  CarsController = new CarsController()
+  CarsController = new HouseController()
 
   constructor() {
     if (USE_ROUTER) {

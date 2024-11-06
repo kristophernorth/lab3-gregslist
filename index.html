@@ -39,7 +39,7 @@
   </header>
 
   <!-- SECTION -->
-  <main class="container">
+  <main class="container-fluid">
 
 
     <!-- SECTION if you are adding houses, add them here -->
@@ -54,34 +54,39 @@
 
     <!-- --- -->
     <!-- SECTION car form -->
-    <form onsubmit="app.CarsController.createCarListing()" class="row g-4 bg-white p-4 rounded shadow-sm my-3">
+    <form onsubmit="app.HousesController.createHouseListing()" class="row g-4 bg-white p-4 rounded shadow-sm my-3">
       <div>
-        <h2>List Your Car</h2>
+        <h2>List Your House</h2>
       </div>
       <div class="col-md-4">
-        <label for="car-make">Make</label>
-        <input required id="car-make" name="make" type="text" minlength="2" maxlength="25" class="form-control">
-      </div>
-      <div class="col-md-4">
-        <label for="car-model">Model</label>
-        <input required id="car-model" name="model" type="text" minlength="1" , maxlength="25" class="form-control">
-      </div>
-      <div class="col-md-4">
-        <label for="car-year">Year</label>
-        <input required id="car-year" name="year" type="number" min="1885" max="2025" class="form-control">
-      </div>
-      <div class="col-md-6">
-        <label for="car-imgUrl">Picture</label>
-        <input required id="car-imgUrl" name="imgUrl" type="url" class="form-control">
-      </div>
-      <div class="col-md-6">
-        <label for="car-color">Color</label>
-        <input required id="car-color" name="color" type="color" class="form-control">
-      </div>
-      <div class="col-md-12">
-        <label for="car-mileage">Mileage</label>
-        <input required id="car-mileage" name="mileage" type="range" min="0" max="303000" step="100"
+        <label for="house-bedrooms">Bedrooms</label>
+        <input required id="house-bedrooms" name="bedrooms" type="text" minlength="1" maxlength="25"
           class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label for="house-bathrooms">Bathrooms</label>
+        <input required id="house-bathrooms" name="bathrooms" type="text" minlength="1" , maxlength="25"
+          class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label for="house-year">Year</label>
+        <input required id="house-year" name="year" type="number" min="1885" max="2025" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label for="house-price">Price</label>
+        <input required id="house-price" name="price" type="number" min="0" max="10000000" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <label for="house-sqft">Sqft</label>
+        <input required id="house-sqft" name="sqft" type="number" min="0" max="100000" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label for="house-description">Description</label>
+        <input required id="house-description" name="sqft" type="number" min="0" max="100000" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label for="house-imgUrl">Picture</label>
+        <input required id="house-imgUrl" name="imgUrl" type="url" class="form-control">
       </div>
       <!-- <div class="col-md-12">
         <label for="car-isRunning">Is Running</label>
@@ -93,7 +98,7 @@
 
     </form>
     <!-- SECTION car cards go here -->
-    <section id="car-listings" class="row">
+    <section id="house-listings" class="row">
 
       <!-- <div class="col-md-4">
         <div class="card shadow-sm">

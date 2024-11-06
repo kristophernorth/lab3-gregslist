@@ -1,16 +1,16 @@
 import { AppState } from "../AppState.js";
-import { Car } from "../models/Car.js";
+import { House } from "../models/House.js";
 
 
 
-class CarsService {
+class HousesService {
 
-  createCarListing(carData) { // carData is "RAW" data, it does not have it's "backing class"
-    console.log('service creating car', carData);
-    const createdCard = new Car(carData)
-    AppState.cars.push(createdCard)
-    console.log('AppState cars', AppState.cars);
-    this.saveCars() // as i add cars, save to localStorage
+  createHouseListing(houseData) { // carData is "RAW" data, it does not have it's "backing class"
+    // console.log('service creating car', carData);
+    const createdCard = new House(houseData)
+    AppState.houses.push(createdCard)
+    // console.log('AppState houses', AppState.houses);
+    this.saveHouses() // as i add cars, save to localStorage
   }
 
 
@@ -32,7 +32,7 @@ class CarsService {
 
 
   // This is called from the constructor in the Controller
-  loadCars() {
+  loadHouses() {
     let stringData = localStorage.getItem('gregslist_cars')
     console.log('🧵💾', stringData);
     let carsData = JSON.parse(stringData)
@@ -48,4 +48,4 @@ class CarsService {
   }
 }
 
-export const carsService = new CarsService()
+export const carsService = new HousesService()

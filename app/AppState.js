@@ -1,31 +1,27 @@
-import { Car } from './models/Car.js'
+import { House } from './models/House.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
 class ObservableAppState extends EventEmitter {
 
-  cars = [
-    new Car({
-      make: 'Jaguar',
-      model: 'XE',
-      year: 2017,
-      color: 'silver',
-      imgUrl: 'https://images.unsplash.com/photo-1630045698264-a0e3396c2cb1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphZ3VhciUyMHhlfGVufDB8fDB8fHww'
+  houses = [
+    new House({
+      year: '1974',
+      bedrooms: 3,
+      bathrooms: 2.5,
+      sqft: 1400,
+      price: 375000,
+      description: 'Newly renovated mid-century modern home',
+      imgUrl: 'https://rew-feed-images.global.ssl.fastly.net/imls/_cloud_media/property/residentialincome/98862307-1-835976ecc96808a93ea194115ae6c537-m.jpg'
     }),
-    new Car({
-      make: 'Honda',
-      model: 'Civic',
-      year: 2020,
-      color: 'red',
-      imgUrl: 'https://images.unsplash.com/photo-1636915873177-a0c1a48d84eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvbmRhJTIwY2l2aWN8ZW58MHx8MHx8fDA%3D',
-      mileage: 500
-    }),
-    new Car({
-      make: 'Tonka',
-      model: 'Truck',
-      year: 1993,
-      color: 'yellow',
-      imgUrl: 'https://images.unsplash.com/photo-1677372191857-f596af525205?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dG9ua2ElMjB0cnVja3xlbnwwfHwwfHx8MA%3D%3D'
+    new House({
+      year: '2024',
+      bedrooms: 4,
+      bathrooms: 3.5,
+      sqft: 2700,
+      price: 675000,
+      description: 'Brand new contemporary styled home',
+      imgUrl: 'https://images.unsplash.com/photo-1505843795480-5cfb3c03f6ff?q=80&w=1033&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }),
   ]
 

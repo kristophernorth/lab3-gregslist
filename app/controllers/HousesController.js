@@ -1,27 +1,27 @@
 import { AppState } from "../AppState.js";
-import { carsService } from "../services/CarsService.js";
+import { HousesService } from "../services/HousesService.js";
 
 
-export class CarsController {
+export class HouseController {
   constructor() {
-    console.log('🚙🎮');
-    carsService.loadCars()
-    this.drawCars()
+    // console.log('🚙🎮');
+    housesService.loadHouses()
+    this.drawHouses()
   }
 
 
-  drawCars() {
-    console.log('✏️🚙🚙');
-    const carsListingsElm = document.getElementById('car-listings')
-    carsListingsElm.innerHTML = ''
-    AppState.cars.forEach(car => carsListingsElm.innerHTML += car.Card)
+  drawHouses() {
+    // console.log('✏️🚙🚙');
+    const housesListingsElm = document.getElementById('house-listings')
+    housesListingsElm.innerHTML = ''
+    AppState.houses.forEach(car => housesListingsElm.innerHTML += house.card)
   }
 
-  createCarListing() {
+  createHouseListing() {
     event.preventDefault() // prevent the default form submission event
     const formElm = event.target
-    console.log('Creating a Car', formElm);
-    console.log(formElm.make.value);
+    // console.log('Creating a Car', formElm);
+    // console.log(formElm.make.value);
     // NOTE collect all the data from the form!
     const formData = {
       make: formElm.make.value,
