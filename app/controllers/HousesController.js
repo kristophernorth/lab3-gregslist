@@ -1,5 +1,5 @@
 import { AppState } from "../AppState.js";
-import { HousesService } from "../services/HousesService.js";
+import { housesService } from "../services/HousesService.js";
 
 
 export class HouseController {
@@ -14,7 +14,7 @@ export class HouseController {
     // console.log('✏️🚙🚙');
     const housesListingsElm = document.getElementById('house-listings')
     housesListingsElm.innerHTML = ''
-    AppState.houses.forEach(car => housesListingsElm.innerHTML += house.card)
+    AppState.houses.forEach(house => housesListingsElm.innerHTML += house.Card)
   }
 
   createHouseListing() {
@@ -24,28 +24,29 @@ export class HouseController {
     // console.log(formElm.make.value);
     // NOTE collect all the data from the form!
     const formData = {
-      make: formElm.make.value,
-      model: formElm.model.value,
       year: formElm.year.value,
-      color: formElm.color.value,
+      bedrooms: formElm.bedrooms.value,
+      bathrooms: formElm.bathrooms.value,
+      sqft: formElm.sqft.value,
+      price: formElm.price.value,
+      description: formElm.description.value,
       imgUrl: formElm.imgUrl.value,
-      mileage: formElm.mileage.value,
     }
-    console.log(formData); // check to see if it's all there
-    carsService.createCarListing(formData)
-    this.drawCars()
+    // console.log(formData); // check to see if it's all there
+    housesService.createHouseListing(formData)
+    this.drawHouses()
   }
 
-  deleteCarListing(carId) {
-    console.log('🔥deleting!', carId);
+  deleteHouseListing(carId) {
+    // console.log('🔥deleting!', carId);
     const confirmed = confirm("Are you sure you want to delete this? this action cannot be REVERED. It will be gone forevah!")
-    if (!confirmed) return
-    const areYourSureSure = confirm("Are you absolutely Sure?")
-    if (!areYourSureSure) return
-    const typingChallange = prompt('Please type "Hell Yeah" to confirm this action')
-    if (typingChallange != 'Hell Yeah') return
+    // if (!confirmed) return
+    // const areYourSureSure = confirm("Are you absolutely Sure?")
+    // if (!areYourSureSure) return
+    // const typingChallange = prompt('Please type "Hell Yeah" to confirm this action')
+    // if (typingChallange != 'Hell Yeah') return
 
-    carsService.deleteCarListing(carId)
-    this.drawCars()
+    housesService.deleteHouseListing(houseId)
+    this.drawHouses()
   }
 }
